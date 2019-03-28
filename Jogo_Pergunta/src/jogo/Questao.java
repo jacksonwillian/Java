@@ -23,6 +23,8 @@ public class Questao {
         
         
         int operacao = ThreadLocalRandom.current().nextInt(0,3);
+        boolean resultado;
+        
         
         if (operacao == 0){
             int operador1 = ThreadLocalRandom.current().nextInt(0,100);
@@ -31,9 +33,9 @@ public class Questao {
             int respostaInt = Integer.parseInt(resposta);
 
             if (operador1 + operador2 == respostaInt)
-                JOptionPane.showMessageDialog(null, "Você acertou!");
+                resultado = true;
             else
-                JOptionPane.showMessageDialog(null, "Você errou!");       
+                resultado = false;   
         
         } else if (operacao == 1) {
             
@@ -43,9 +45,9 @@ public class Questao {
             int respostaInt = Integer.parseInt(resposta);
 
             if (operador1 - operador2 == respostaInt)
-                JOptionPane.showMessageDialog(null, "Você acertou!");
+                resultado = true;
             else
-                JOptionPane.showMessageDialog(null, "Você errou!");       
+                resultado = false;        
 
         } else {
         
@@ -55,10 +57,15 @@ public class Questao {
             int respostaInt = Integer.parseInt(resposta);
 
             if (operador1 * operador2 == respostaInt)
-                JOptionPane.showMessageDialog(null, "Você acertou!");
+                resultado = true;
             else
-                JOptionPane.showMessageDialog(null, "Você errou!");       
+                resultado = false;        
         }
+        
+        if (resultado == true)
+            JOptionPane.showMessageDialog(null, "Você acertou!");
+        else
+            JOptionPane.showMessageDialog(null, "Você errou!");    
 
     }
   
